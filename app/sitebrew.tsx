@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState('projects');
@@ -136,10 +137,12 @@ export default function Portfolio() {
             </a>
           </div>
           <div className="hidden md:block">
-            <img 
+            <Image 
               src="/images/profile.jpg"
               alt="Stanley JOMIE" 
-              className="w-80 h-80 rounded-full object-cover shadow-xl border-4 border-[#2E9CDB]"
+              width={320}
+              height={320}
+              className="rounded-full object-cover shadow-xl border-4 border-[#2E9CDB]"
             />
           </div>
         </div>
@@ -157,7 +160,13 @@ export default function Portfolio() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-[#001233] rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-shadow border border-[#2E9CDB]/20 flex flex-col"
             >
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+              <Image 
+                src={project.image} 
+                alt={project.title} 
+                width={400}
+                height={192}
+                className="w-full h-48 object-cover" 
+              />
               <div className="p-6 flex-1 flex flex-col">
                 <h4 className="text-lg font-semibold text-white mb-2">{project.title}</h4>
                 <p className="text-gray-300 mb-4">{project.description}</p>
@@ -247,7 +256,7 @@ export default function Portfolio() {
           <h3 className="text-2xl font-semibold text-white mb-12">Education</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-[#001233] p-8 rounded-lg border border-[#2E9CDB]/20">
-              <h4 className="text-lg font-medium text-[#2E9CDB] mb-2">Master's Degree in AI applied to Business</h4>
+              <h4 className="text-lg font-medium text-[#2E9CDB] mb-2">Master&apos;s Degree in AI applied to Business</h4>
               <p className="text-white mb-2">EUGENIA School</p>
               <p className="text-gray-300">2024 - 2026</p>
               <ul className="mt-4 space-y-2">
@@ -263,7 +272,7 @@ export default function Portfolio() {
             </div>
 
             <div className="bg-[#001233] p-8 rounded-lg border border-[#2E9CDB]/20">
-              <h4 className="text-lg font-medium text-[#2E9CDB] mb-2">Bachelor's Degree in Commercial Management</h4>
+              <h4 className="text-lg font-medium text-[#2E9CDB] mb-2">Bachelor&apos;s Degree in Commercial Management</h4>
               <p className="text-white mb-2">PPA Business School</p>
               <p className="text-gray-300">2021 - 2024</p>
               <ul className="mt-4 space-y-2">
@@ -299,9 +308,9 @@ export default function Portfolio() {
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-[#001233] rounded-2xl p-8 border border-[#2E9CDB]/20">
-          <h3 className="text-2xl font-semibold text-white mb-4">Let's Connect</h3>
+          <h3 className="text-2xl font-semibold text-white mb-4">Let&apos;s Connect</h3>
           <p className="text-gray-300 mb-6">
-            I'm always interested in new opportunities and collaborations.
+            I&apos;m always interested in new opportunities and collaborations.
             Feel free to reach out!
           </p>
           <a 

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ChevronLeft, Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AIFinanceProject() {
   return (
@@ -27,10 +28,12 @@ export default function AIFinanceProject() {
         transition={{ duration: 0.5 }}
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       >
-        <img 
-          src="/images/ai-finance.jpg" 
-          alt="AI Finance Project" 
-          className="w-full h-[400px] object-cover rounded-xl shadow-xl mb-8"
+        <Image 
+          src="/images/ai-finance.jpg"
+          alt="AI Finance Project"
+          width={400}
+          height={300}
+          className="w-full h-auto object-cover rounded-xl shadow-xl mb-8"
         />
         
         <div className="flex justify-between items-center mb-8">

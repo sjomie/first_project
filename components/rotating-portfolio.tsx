@@ -4,21 +4,23 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Pause, Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 interface Project {
   id: number
   title: string
+  image: string
 }
 
 export function RotatingPortfolio() {
   const [rotation, setRotation] = useState(0)
   const [isRotating, setIsRotating] = useState(true)
   const projects: Project[] = [
-    { id: 1, title: 'Project 1' },
-    { id: 2, title: 'Project 2' },
-    { id: 3, title: 'Project 3' },
-    { id: 4, title: 'Project 4' },
-    { id: 5, title: 'Project 5' },
+    { id: 1, title: 'Project 1', image: '/project1.jpg' },
+    { id: 2, title: 'Project 2', image: '/project2.jpg' },
+    { id: 3, title: 'Project 3', image: '/project3.jpg' },
+    { id: 4, title: 'Project 4', image: '/project4.jpg' },
+    { id: 5, title: 'Project 5', image: '/project5.jpg' },
   ]
 
   useEffect(() => {
@@ -64,6 +66,13 @@ export function RotatingPortfolio() {
                 rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
               }}
             >
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={400}
+                height={300}
+                className="w-full h-auto object-cover"
+              />
               <h3 className="text-sm font-semibold">{project.title}</h3>
             </motion.div>
           )
